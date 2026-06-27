@@ -1,0 +1,23 @@
+{
+  "name": "paper2video",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "preview": "remotion preview src/index.jsx",
+    "skill:install": "bash scripts/install_skill.sh",
+    "validate:storyboard": "node scripts/validate_storyboard.mjs",
+    "tts:prototype": ".venv/bin/python scripts/generate_sarvam_tts.py --env-file /home/rka/code/paper2video_v3/.env",
+    "render:prototype": "remotion render src/index.jsx PaperExplainer artifacts/nature_s41467-025-64132-4/video_intro_fig1_fig2.mp4 --codec h264",
+    "render:prototype:voiceover": "remotion render src/index.jsx PaperExplainer artifacts/nature_s41467-025-64132-4/video_intro_task_fig1_fig2_voiceover.mp4 --codec h264"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.484",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.484"
+  },
+  "devDependencies": {
+    "ajv": "^8.20.0"
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "paper": {
+    "title": "Dopamine dynamics during stimulus-reward learning in mice can be explained by performance rather than learning",
+    "shortTitle": "Dopamine: learning signal or performance control?",
+    "citation": "Bakhurin et al., Nature Communications, 2025",
+    "doi": "10.1038/s41467-025-64132-4"
+  },
+  "scenes": [
+    {
+      "kind": "intro",
+      "durationFrames": 360,
+      "eyebrow": "Paper explainer prototype",
+      "title": "This paper questions the classic dopamine story",
+      "bullets": [
+        "Classic view: dopamine is a reward prediction error.",
+        "That signal is treated as a teaching signal for learning.",
+        "This paper asks whether it is actually about performance."
+      ],
+      "narration": "The starting point is the classic reward prediction error theory. In that view, dopamine neurons fire when reward is better than expected, pause when reward is worse than expected, and gradually shift their response from the reward to the cue that predicts it. That pattern is usually interpreted as a teaching signal for learning.",
+      "evidence": ["Abstract, page 1", "Introduction, page 1"]
+    },
+    {
+      "kind": "intro",
+      "durationFrames": 360,
+      "eyebrow": "Motivation",
+      "title": "The authors think behavior was measured too coarsely",
+      "bullets": [
+        "Many studies track licking or reward-port timing.",
+        "Those measures miss tiny continuous movements.",
+        "A movement signal can look like a learning signal."
+      ],
+      "narration": "The authors' motivation is that many dopamine experiments measure behavior too coarsely. If the only behavioral readout is licking, or time spent near reward, then small ongoing movements are invisible. Their concern is that dopamine activity previously called reward prediction error may partly reflect these missed performance variables.",
+      "evidence": ["Introduction, page 1", "Abstract, page 1"]
+    },
+    {
+      "kind": "intro",
+      "durationFrames": 330,
+      "eyebrow": "Core alternative",
+      "title": "Performance, not learning, is the competing explanation",
+      "bullets": [
+        "Learning: update an internal prediction.",
+        "Performance: control what the animal does now.",
+        "The paper tries to separate these two."
+      ],
+      "narration": "So the key distinction is learning versus performance. A learning signal changes an internal prediction for future trials. A performance signal helps control the current behavior: when the animal moves, how strongly it moves, and in which direction. The whole paper is built around separating those two explanations.",
+      "evidence": ["Introduction, page 1", "Discussion, page 11"]
+    },
+    {
+      "kind": "figure",
+      "durationFrames": 390,
+      "figure": "Task",
+      "asset": "generated/nature_s41467-025-64132-4/figures/fig1.png",
+      "title": "The task is simple: tone, wait, sucrose",
+      "bullets": [
+        "A tone predicts sucrose reward.",
+        "Before reward, mice start an anticipatory response.",
+        "After reward, they produce a consummatory response."
+      ],
+      "narration": "Here is the task. A head-fixed mouse hears a tone, called the conditioned stimulus, or CS. After a short delay, sucrose is delivered, called the unconditioned stimulus, or US. As training proceeds, the mouse starts responding before the sucrose arrives. That anticipatory response is the conditioned response, or CR. The response after sucrose delivery is the unconditioned response, or UR.",
+      "focus": {"x": 2, "y": 2, "w": 42, "h": 22},
+      "evidence": ["Results: Force tuning in dopamine neurons", "Fig. 1a-b caption"]
+    },
+    {
+      "kind": "figure",
+      "durationFrames": 390,
+      "figure": "Fig. 1",
+      "asset": "generated/nature_s41467-025-64132-4/figures/fig1.png",
+      "title": "The trick is measuring force during the task",
+      "bullets": [
+        "Head fixation does not mean the mouse is still.",
+        "Sensors detect forward and backward force.",
+        "This gives a continuous behavior trace."
+      ],
+      "narration": "The important methodological move is the force sensor. Even though the mouse is head-fixed, it still makes small forward and backward force exertions. By measuring those forces continuously, the authors can ask whether dopamine activity follows the animal's actual movement, not just the cue and reward events.",
+      "focus": {"x": 2, "y": 2, "w": 57, "h": 31},
+      "evidence": ["Results: Force tuning in dopamine neurons", "Fig. 1a-d caption"]
+    },
+    {
+      "kind": "figure",
+      "durationFrames": 390,
+      "figure": "Fig. 1",
+      "asset": "generated/nature_s41467-025-64132-4/figures/fig1.png",
+      "title": "Figure 1 first classifies dopamine neurons by movement",
+      "bullets": [
+        "They record VTA dopamine neurons.",
+        "Cell identity is checked with optogenetic tagging.",
+        "Spontaneous movements reveal each neuron's preference."
+      ],
+      "narration": "Figure 1 does not start by asking whether dopamine predicts reward. It first classifies dopamine neurons by their relationship to movement. The authors record VTA dopamine neurons and use optogenetic tagging to identify dopamine cells. Then they use spontaneous forward and backward movements to ask which neurons prefer which force direction.",
+      "focus": {"x": 3, "y": 18, "w": 55, "h": 24},
+      "evidence": ["Results: Force tuning in dopamine neurons", "Fig. 1d-g caption"]
+    },
+    {
+      "kind": "figure",
+      "durationFrames": 420,
+      "figure": "Fig. 1",
+      "asset": "generated/nature_s41467-025-64132-4/figures/fig1.png",
+      "title": "The main Figure 1 result is opponent force tuning",
+      "bullets": [
+        "Forward DA neurons rise before forward force.",
+        "Backward DA neurons rise before backward force.",
+        "A dopamine model recapitulates the force profiles."
+      ],
+      "narration": "The main result is that dopamine neurons separate into opponent populations. Forward dopamine neurons increase around forward force and decrease around backward force. Backward dopamine neurons show the opposite pattern. This matters because the tuning appears during spontaneous movements, before any interpretation about cue learning is needed.",
+      "focus": {"x": 3, "y": 34, "w": 94, "h": 64},
+      "evidence": ["Results: Force tuning in dopamine neurons", "Fig. 1h-o caption"]
+    },
+    {
+      "kind": "figure",
+      "durationFrames": 390,
+      "figure": "Fig. 2",
+      "asset": "generated/nature_s41467-025-64132-4/figures/fig2.png",
+      "title": "Figure 2 sets up the decisive control",
+      "bullets": [
+        "Reward prediction is held constant.",
+        "The reward spout moves only 2 mm.",
+        "The required force direction changes."
+      ],
+      "narration": "Figure 2 is the cleaner test. The authors keep the cue and reward prediction the same, but move the reward spout slightly behind the mouth, by about 2 millimeters. That tiny change makes the animal use a different force direction to access the same predicted reward.",
+      "focus": {"x": 3, "y": 1, "w": 94, "h": 34},
+      "evidence": ["Results: Force direction and DA neuron activity during Pavlovian conditioning", "Fig. 2a-d caption"]
+    },
+    {
+      "kind": "figure",
+      "durationFrames": 390,
+      "figure": "Fig. 2",
+      "asset": "generated/nature_s41467-025-64132-4/figures/fig2.png",
+      "title": "Licking alone would miss the manipulation",
+      "bullets": [
+        "Anticipatory licking stays similar.",
+        "Forward and backward force change strongly.",
+        "The same reward can require different movements."
+      ],
+      "narration": "This is exactly why the force measurement matters. If you only looked at anticipatory licking, the two spout positions would look similar. But the force traces show that the animal is solving the same reward-prediction problem with different movements. That creates a way to test whether dopamine tracks prediction or movement.",
+      "focus": {"x": 6, "y": 8, "w": 80, "h": 26},
+      "evidence": ["Results: Force direction and DA neuron activity during Pavlovian conditioning", "Fig. 2b-d caption"]
+    },
+    {
+      "kind": "figure",
+      "durationFrames": 420,
+      "figure": "Fig. 2",
+      "asset": "generated/nature_s41467-025-64132-4/figures/fig2.png",
+      "title": "Stimulus alignment hides the movement signal",
+      "bullets": [
+        "Aligned to the tone, DA responses look similar.",
+        "That resembles a cue response.",
+        "Movement timing varies from trial to trial."
+      ],
+      "narration": "When dopamine activity is aligned to the tone, the two dopamine populations look broadly similar. That is the kind of plot that can support a cue or reward-prediction interpretation. But movement timing varies from trial to trial, so aligning only to the tone can blur together movement-related activity.",
+      "focus": {"x": 3, "y": 34, "w": 52, "h": 30},
+      "evidence": ["Results: Force direction and DA neuron activity during Pavlovian conditioning", "Fig. 2e-h caption"]
+    },
+    {
+      "kind": "figure",
+      "durationFrames": 420,
+      "figure": "Fig. 2",
+      "asset": "generated/nature_s41467-025-64132-4/figures/fig2.png",
+      "title": "Movement alignment reveals direction selectivity",
+      "bullets": [
+        "Aligned to force onset, direction tuning appears.",
+        "Forward cells prefer forward CRs.",
+        "Backward cells prefer backward CRs."
+      ],
+      "narration": "When the same activity is aligned to the onset of the force response, direction selectivity becomes clear. Forward dopamine neurons are more active for forward conditioned responses, while backward dopamine neurons are more active for backward conditioned responses. The same cells match their spontaneous movement preferences from Figure 1.",
+      "focus": {"x": 4, "y": 51, "w": 91, "h": 45},
+      "evidence": ["Results: Force direction and DA neuron activity during Pavlovian conditioning", "Fig. 2i-l caption"]
+    },
+    {
+      "kind": "intro",
+      "durationFrames": 360,
+      "eyebrow": "Takeaway after Figures 1-2",
+      "title": "The first two figures reframe the dopamine signal",
+      "bullets": [
+        "Figure 1: dopamine populations track force direction.",
+        "Figure 2: this persists when reward prediction is constant.",
+        "The apparent learning signal may include performance control."
+      ],
+      "narration": "So after the first two figures, the logic is this. Figure 1 shows that VTA dopamine neurons are strongly organized by force direction. Figure 2 shows that this movement tuning is still visible inside a standard Pavlovian reward task, even when reward prediction is held constant. The paper's broader claim is that dopamine dynamics often attributed to learning may be better explained by online control of performance.",
+      "evidence": ["Fig. 1 and Fig. 2", "Abstract, page 1"]
+    }
+  ]
+}

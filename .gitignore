@@ -1,0 +1,14 @@
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+
+# Local papers, OCR outputs, and generated video artifacts.
+data/raw/
+data/outputs/
+artifacts/
+public/generated/
+
+# Credentials should stay in the source project/env, not this repo.
+.env
+*.env
