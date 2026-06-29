@@ -42,18 +42,53 @@ Every real paper explainer must include:
 
 For each figure scene, consult the figure caption and nearby Results text before writing narration. A scene fails review if it only says "they found X" without explaining what was plotted, what the viewer should notice, and how the plot makes the point.
 
+### Hypothesis-Driven Panel Explanations
+
+Prefer panel explanations that make the logic of the experiment explicit. For important panels, use this structure in narration or notes:
+
+- hypothesis/question: what claim or model is being tested
+- prediction: if the hypothesis is true, plotting `y` versus `x` should show a specific trend
+- plot mechanics: what `x`, `y`, colors, groups, alignments, or panels mean
+- observation: what trend is actually visible
+- inference: whether the observed trend supports, weakens, or complicates the hypothesis
+
+Example shape:
+
+```text
+If hypothesis H is true, then plotting movement speed versus SNr activity should show higher speed on trials with higher SNr activity. Panel J plots motif velocity on the y-axis against SNr Z-score on the x-axis. The points slope upward, so the observation supports H: SNr activity scales with movement vigor. It does not by itself prove causality, so the next figure needs perturbation.
+```
+
+Use this especially for dense multi-panel figures. Explain individual panels when they carry distinct evidence, not only the figure-level conclusion.
+
 ## Workflow
 
 1. Parse the paper with Mistral OCR.
 2. Extract title, abstract, introduction, discussion, figure captions, and Results paragraphs around each figure.
 3. Obtain figure assets from publisher/arXiv/source when possible; otherwise render PDF pages and crop figure regions.
 4. Build a storyboard with motivation, task/setup, figure setup, panel explanation, figure claim, synthesis, and limitations.
-5. Render with Remotion.
-6. Generate Sarvam TTS and update scene durations.
-7. Render the voiceover MP4.
+5. Generate Sarvam TTS and update scene durations.
+6. Preview before doing a full render:
+   - render stills for every scene, or a contact sheet with one representative frame per scene
+   - render short clips for any scene with dense figures, long captions, or risky layout
+   - fix text overlap, citation placement, figure crop, and focus boxes before the final MP4
+7. Render the final voiceover MP4 only after storyboard, audio, and still-frame QA are stable.
 8. Verify MP4 duration, audio stream, audio levels, and representative frames.
 
 Use subagents when useful to preserve context, especially for separate reading/story-writing and Remotion implementation passes. Keep the final storyboard evidence-backed.
+
+## Speed Notes
+
+The slowest part is usually not Sarvam TTS. In the first bioRxiv Fig. 1-2 explainer, Sarvam generated 13 scene WAV files in roughly 20 seconds. The expensive parts were careful story writing, figure/panel crop decisions, and full Remotion rendering. A 7:23 video at 30 fps required 13,300 rendered frames, and a full render on the laptop took roughly 15-25 minutes. Re-rendering after finding a layout issue doubled that cost.
+
+To save time on future videos:
+
+- avoid full-rendering until the final pass
+- generate a still/contact-sheet QA pass after TTS duration update
+- cache paper HTML/PDF, OCR output, figure assets, crops, TTS audio, and storyboards by source/hash
+- reuse TTS audio when narration text is unchanged
+- use publisher web figures when available instead of PDF extraction
+- use `tlavos` for final renders when the local laptop is slow
+- keep local laptop renders for stills, short clips, and layout debugging
 
 ## Commands
 
